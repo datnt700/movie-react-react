@@ -31,9 +31,8 @@ function App() {
   const getMovie = async (textInput: string) => {
     try {
       const result = await axios.get(
-        `http://www.omdbapi.com/?t=${textInput}&apikey=5a86865a`
+        `https://www.omdbapi.com/?t=${textInput}&apikey=5a86865a`
       );
-      console.log(result.data.Error);
 
       if (result.data.Error === 'Movie not found!') {
         setIsError(true);
@@ -50,7 +49,7 @@ function App() {
           plot: result.data.Plot,
           writer: result.data.Writer,
           imdbRating: result.data.imdbRating,
-          imdbVote: result.data.imdbVote,
+          imdbVote: result.data.imdbVotes,
         });
       }
     } catch (error) {

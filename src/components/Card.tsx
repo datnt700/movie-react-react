@@ -1,6 +1,6 @@
 import styles from './Card.module.scss';
 
-interface Props {
+interface CardProps {
   title: string | undefined;
   poster: string | undefined;
   director: string | undefined;
@@ -24,7 +24,7 @@ export const Card = ({
   imdbRating,
   imdbVote,
   active,
-}: Props) => {
+}: CardProps) => {
   return (
     <div className={active ? `${styles.card} ${styles.active}` : styles.card}>
       <div className={styles.image}>
